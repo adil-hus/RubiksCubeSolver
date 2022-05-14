@@ -1,6 +1,7 @@
-import cv2
 from ColourDetection import *
 from Algorithm import *
+import cv2
+
 
 colour = []
 font = cv2.FONT_HERSHEY_COMPLEX

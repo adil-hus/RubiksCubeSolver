@@ -47,15 +47,6 @@ def kociemba(colour_list):
                 solution_string.remove(i)
                 solution_string.insert(position, p)
                 solution_string.insert(position, p)
-            elif i == "B":
-                # In the string, index() finds the B instruction
-                # (Back clockwise face rotation) and get replaced
-                # with 3 instructions (B' --> up, U, down)
-                position = solution_string.index(i)
-                solution_string.remove(i)
-                solution_string.insert(position, "up")
-                solution_string.insert(position, "U")
-                solution_string.insert(position, "down")
             elif i == "B'":
                 # In the string, index() finds the B' instruction
                 # (Back counterclockwise face rotation) and gets replaced
@@ -65,9 +56,18 @@ def kociemba(colour_list):
                 solution_string.insert(position, "up")
                 solution_string.insert(position, "U'")
                 solution_string.insert(position, "down")
+        elif i == "B":
+            # In the string, index() finds the B instruction
+            # (Back clockwise face rotation) and get replaced
+            # with 3 instructions (B' --> up, U, down)
+            position = solution_string.index(i)
+            solution_string.remove(i)
+            solution_string.insert(position, "up")
+            solution_string.insert(position, "U")
+            solution_string.insert(position, "down")
 
-            else:
-                continue
+        else:
+            continue
     # Print the solution steps in the terminal
     print(solution_string)
 

@@ -4,7 +4,6 @@ colour = []
 
 
 def colour_spectrum(r, g, b):
-    # These rgb ranges were measured at uni in library.
     # Get min and max rgb values for all 6 colours.
     # Depending on the lighting in the room and webcams, the min and max
     # rgb values change for each colour. For example in one location the
@@ -13,6 +12,7 @@ def colour_spectrum(r, g, b):
     # it is important to find the min and max rgb values for each colour
     # so the Rubik's Cube Solver can fully function.
     # Finally, return all 6 colours.
+    # These rgb ranges were measured at uni in library.
     # if (15 <= r <= 35) and (40 <= g <= 60) and (100 <= b <= 130):
     #     return 'o'
     # elif (30 <= r <= 50) and (45 <= g <= 75) and (25 <= b <= 50):
@@ -29,9 +29,9 @@ def colour_spectrum(r, g, b):
     #     pass
 
     # These rgb ranges were measured at home.
-    if (25 <= r <= 90) and (50 <= g <= 106) and (120 <= b <= 185):
+    if (25 <= r <= 90) and (50 <= g <= 110) and (120 <= b <= 185):
         return 'o'
-    elif (49 <= r <= 105) and (74 <= g <= 130) and (19 <= b <= 80):
+    elif (49 <= r <= 110) and (74 <= g <= 130) and (19 <= b <= 80):
         return 'g'
     elif (44 <= r <= 135) and (113 <= g <= 185) and (115 <= b <= 190):
         return 'y'
