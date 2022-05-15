@@ -29,7 +29,7 @@ def colour_spectrum(r, g, b):
     #     pass
 
     # These rgb ranges were measured at home.
-    if (25 <= r <= 90) and (50 <= g <= 110) and (120 <= b <= 185):
+    if (20 <= r <= 90) and (50 <= g <= 110) and (120 <= b <= 185):
         return 'o'
     elif (49 <= r <= 110) and (74 <= g <= 130) and (19 <= b <= 80):
         return 'g'

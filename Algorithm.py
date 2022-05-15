@@ -9,27 +9,14 @@ size = 0.5
 size_2 = 2
 hue = (0, 0, 0)
 
-# Letters stand for Up, Left, Front, Right, Back, and Down
-#             |------------|
-#             | U1  U2  U3 |
-#             |------------|
-#             | U4  U5  U6 |
-#             |------------|
-#             | U7  U8  U9 |
-# |-----------|------------|------------|-----------|
-# |L1  L2  L3 | F1  F2  F3 | R1  R2  R3 | B1  B2  B3|
-# |-----------|------------|------------|-----------|
-# |L4  L5  L6 | F4  F5  F6 | R4  R5  R6 | B4  B5  B6|
-# |-----------|------------|------------|-----------|
-# |L7  L8  L9 | F7  F8  F9 | R7  R8  R9 | B7  B8  B9|
-# |-----------|------------|------------|-----------|
-#             | D1  D2  D3 |
-#             |------------|
-#             | D4  D5  D6 |
-#             |------------|
-#             | D7  D8  D9 |
-#             |------------|
 
+#   |------------|
+#   | X1  X2  X3 |
+#   |------------|
+#   | X4  X5  X6 |
+#   |------------|
+#   | X7  X8  X9 |
+#   |------------|
 
 def kociemba(colour_list):
     # Using the quotation marks as a separator,
@@ -41,6 +28,7 @@ def kociemba(colour_list):
     for i in solution_string:
         i = str(i)
         if len(i) > 1:
+            # validation
             if i[1] == '2':
                 p = i[0]
                 position = solution_string.index(i)
@@ -65,7 +53,6 @@ def kociemba(colour_list):
             solution_string.insert(position, "up")
             solution_string.insert(position, "U")
             solution_string.insert(position, "down")
-
         else:
             continue
     # Print the solution steps in the terminal
@@ -124,28 +111,28 @@ def kociemba(colour_list):
         # in order to solve their Rubik's Cube.
         solution = solution_string[solution_guide]
         if solution == "U":
-            # arrow starts at position 3 and goes across to position 1 e.g. U3 to U1
+            # arrow starts at position 3 and goes across to position 1 e.g. X3 to X1
             cv2.arrowedLine(window, (200, 75), (50, 75), colour, thickness)
         elif solution == "U'":
-            # arrow starts at position 1 and goes across to position 3 e.g. U1 to U3
+            # arrow starts at position 1 and goes across to position 3 e.g. X1 to X3
             cv2.arrowedLine(window, (50, 75), (200, 75), colour, thickness)
         elif solution == "D":
-            # arrow starts at position 7 and goes across to position 9 e.g. U7 to U9
+            # arrow starts at position 7 and goes across to position 9 e.g. X7 to X9
             cv2.arrowedLine(window, (50, 175), (200, 175), colour, thickness)
         elif solution == "D'":
-            # arrow starts at position 9 and goes across to position 7 e.g. U9 to U7
+            # arrow starts at position 9 and goes across to position 7 e.g. X9 to X7
             cv2.arrowedLine(window, (200, 175), (50, 175), colour, thickness)
         elif solution == "R":
-            # arrow starts at position 9 and goes up to position 3 e.g. U9 to U3
+            # arrow starts at position 9 and goes up to position 3 e.g. X9 to X3
             cv2.arrowedLine(window, (175, 200), (175, 50), colour, thickness)
         elif solution == "R'":
-            # arrow starts at position 3 and goes down to position 9 e.g. U3 to U9
+            # arrow starts at position 3 and goes down to position 9 e.g. X3 to X9
             cv2.arrowedLine(window, (175, 50), (175, 200), colour, thickness)
         elif solution == "L":
-            # arrow starts at position 1 and goes down to position 7 e.g. U1 to U7
+            # arrow starts at position 1 and goes down to position 7 e.g. X1 to X7
             cv2.arrowedLine(window, (75, 50), (75, 200), colour, thickness)
         elif solution == "L'":
-            # arrow starts at position 7 and goes up to position 1 e.g. U7 to U1
+            # arrow starts at position 7 and goes up to position 1 e.g. X7 to X1
             cv2.arrowedLine(window, (75, 200), (75, 50), colour, thickness)
         elif solution == "F":
             # arrow instructs the player to rotate the face clockwise
@@ -163,41 +150,41 @@ def kociemba(colour_list):
             # Up means moving the cube upwards, so the user ends on the face
             # below e.g. starting position is the red centre and moving the cube
             # downwards means the user will end on the face with the white centre.
-            # arrow starts at position 7 and goes up to position 1 e.g. U7 to U1
+            # arrow starts at position 7 and goes up to position 1 e.g. X7 to X1
             cv2.arrowedLine(window, (75, 200), (75, 50), colour, thickness)
-            # arrow starts at position 8 and goes up to position 2 e.g. U8 to U2
+            # arrow starts at position 8 and goes up to position 2 e.g. X8 to X2
             cv2.arrowedLine(window, (125, 200), (125, 50), colour, thickness)
-            # arrow starts at position 9 and goes up to position 3 e.g. U9 to U3
+            # arrow starts at position 9 and goes up to position 3 e.g. X9 to X3
             cv2.arrowedLine(window, (175, 200), (175, 50), colour, thickness)
         elif solution == "right":
             # Right means turning the cube right, so the user ends on the left sided face
             # e.g. starting position is the red centre and turning the cube
             # right means the user will end on the face with the blue centre.
-            # arrow starts at position 1 and goes across to position 3 e.g. U1 to U3
+            # arrow starts at position 1 and goes across to position 3 e.g. X1 to X3
             cv2.arrowedLine(window, (50, 75), (200, 75), colour, thickness)
-            # arrow starts at position 4 and goes across to position 6 e.g. U4 to U6
+            # arrow starts at position 4 and goes across to position 6 e.g. X4 to X6
             cv2.arrowedLine(window, (50, 125), (200, 125), colour, thickness)
-            # arrow starts at position 7 and goes across to position 9 e.g. U7 to U9
+            # arrow starts at position 7 and goes across to position 9 e.g. X7 to X9
             cv2.arrowedLine(window, (50, 175), (200, 175), colour, thickness)
         elif solution == "down":
             # Down means moving the cube downwards, so the user ends on the face
             # above e.g. starting position is the red centre and moving the cube
             # downwards means the user will end on the face with the yellow centre.
-            # arrow starts at position 1 and goes down to position 7 e.g. U1 to U7
+            # arrow starts at position 1 and goes down to position 7 e.g. X1 to X7
             cv2.arrowedLine(window, (75, 50), (75, 200), colour, thickness)
-            # arrow starts at position 2 and goes down to position 8 e.g. U2 to U8
+            # arrow starts at position 2 and goes down to position 8 e.g. X2 to X8
             cv2.arrowedLine(window, (125, 50), (125, 200), colour, thickness)
-            # arrow starts at position 3 and goes down to position 9 e.g. U3 to U9
+            # arrow starts at position 3 and goes down to position 9 e.g. X3 to X9
             cv2.arrowedLine(window, (175, 50), (175, 200), colour, thickness)
         elif solution == "left":
             # Left means turning the cube left, so the user ends on the right sided face
             # e.g. starting position is the red centre and turning the cube
             # left means the user will end on the face with the green centre.
-            # arrow starts at position 3 and goes across to position 1 e.g. U3 to U1
+            # arrow starts at position 3 and goes across to position 1 e.g. X3 to X1
             cv2.arrowedLine(window, (200, 75), (50, 75), colour, thickness)
-            # arrow starts at position 6 and goes across to position 4 e.g. U6 to U4
+            # arrow starts at position 6 and goes across to position 4 e.g. X6 to X4
             cv2.arrowedLine(window, (200, 125), (50, 125), colour, thickness)
-            # arrow starts at position 9 and goes across to position 7 e.g. U9 to U7
+            # arrow starts at position 9 and goes across to position 7 e.g. X9 to X7
             cv2.arrowedLine(window, (200, 175), (50, 175), colour, thickness)
         # Display the resulting frame with the drawn
         # Rubik's Cube outline and a set of arrow solutions.
