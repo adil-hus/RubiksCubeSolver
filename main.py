@@ -35,14 +35,14 @@ thickness = 2
 def instructions(img, step):
     # Give first instruction for colour detection
     if step == 1:
-        # Up centre is U5
+        # Yellow centre is U5
         cv2.putText(window, "Show the face that contains a yellow cube in the centre", (15, 30), font, size, hue)
         cv2.putText(window, "Press the 's' button to start colour extraction", (15, 250), font, size, hue)
         cv2.putText(window, "Press the 'c' button if you want to close the window", (15, 300), font, size, hue)
         cv2.imshow("frame", window)
     # Give second instruction for colour detection
     elif step == 2:
-        # Left centre is L5
+        # Blue centre is L5
         cv2.putText(window, "Show the face that contains a blue cube in the centre", (15, 30), font, size, hue)
         cv2.putText(window, "Press the 's' button to continue colour extraction", (15, 250), font, size, hue)
         cv2.putText(window, "If one or more colours isn't extracted", (15, 275), font, size, hue)
@@ -50,7 +50,7 @@ def instructions(img, step):
         cv2.imshow("frame", window)
     # Give third instruction for colour detection
     elif step == 3:
-        # Front centre is F5
+        # Red centre is F5
         cv2.putText(window, "Show the face that contains a red cube in the centre", (15, 30), font, size, hue)
         cv2.putText(window, "Press the 's' button to continue colour extraction", (15, 250), font, size, hue)
         cv2.putText(window, "If one or more colours isn't extracted", (15, 275), font, size, hue)
@@ -58,7 +58,7 @@ def instructions(img, step):
         cv2.imshow("frame", window)
     # Give fourth instruction for colour detection
     elif step == 4:
-        # Right centre is R5
+        # Green centre is R5
         cv2.putText(window, "Show the face that contains a green cube in the centre", (15, 30), font, size, hue)
         cv2.putText(window, "Press the 's' button to continue colour extraction", (15, 250), font, size, hue)
         cv2.putText(window, "If one or more colours isn't extracted", (15, 275), font, size, hue)
@@ -66,7 +66,7 @@ def instructions(img, step):
         cv2.imshow("frame", window)
     # Give fifth instruction for colour detection
     elif step == 5:
-        # Back centre is B5
+        # Orange centre is B5
         cv2.putText(window, "Show the face that contains a orange cube in the centre", (15, 30), font, size, hue)
         cv2.putText(window, "Press the 's' button to continue colour extraction", (15, 250), font, size, hue)
         cv2.putText(window, "If one or more colours isn't extracted", (15, 275), font, size, hue)
@@ -74,7 +74,7 @@ def instructions(img, step):
         cv2.imshow("frame", window)
     # Give sixth instruction for colour detection
     elif step == 6:
-        # Down centre is D5
+        # White centre is D5
         cv2.putText(window, "Show the face that contains a white cube in the centre", (15, 30), font, size, hue)
         cv2.putText(window, "Press the 's' button to continue colour extraction", (15, 250), font, size, hue)
         cv2.putText(window, "If one or more colours isn't extracted", (15, 275), font, size, hue)
